@@ -2,6 +2,7 @@ version: "3"
 
 services:
   app:
+    image: yura2201/devops-for-programmers-project-74
     build:
       context: .
       dockerfile: Dockerfile.production

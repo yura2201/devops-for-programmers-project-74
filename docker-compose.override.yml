@@ -9,3 +9,17 @@ services:
       - "8080:8080"
     volumes:
       - "./app:/app"
+
+  caddy:
+    image: caddy:2.7.6-alpine
+    volumes:
+      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "caddy_data:/data"
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - app
+
+volumes:
+  caddy_data:

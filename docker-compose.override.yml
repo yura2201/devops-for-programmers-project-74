@@ -15,6 +15,7 @@ services:
     volumes:
       - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
       - "caddy_data:/data"
+      - "caddy_config:/config"
     ports:
       - 80:80
       - 443:443
@@ -23,3 +24,4 @@ services:
 
 volumes:
   caddy_data:
+  caddy_config:

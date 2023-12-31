@@ -29,6 +29,7 @@ services:
       - hexlet-net
     depends_on:
       - db
+    restart: on-failure:5
 
 networks:
   hexlet-net:

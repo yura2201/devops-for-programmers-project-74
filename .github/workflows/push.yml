@@ -12,10 +12,10 @@ env:
 jobs:
   build:
     env:
-      DATABASE_HOST=${{ vars.DATABASE_HOST }}
-      DATABASE_NAME=${{ secrets.DATABASE_NAME }}
-      DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}
-      DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
+      DATABASE_HOST: ${{ vars.DATABASE_HOST }}
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
 

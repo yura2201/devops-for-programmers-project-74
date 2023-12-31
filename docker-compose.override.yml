@@ -33,3 +33,7 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+
+networks:
+  hexlet-net:
+    driver: bridge

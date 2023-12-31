@@ -17,8 +17,8 @@ services:
   app:
     image: yura2201/devops-for-programmers-project-74
     environment:
-      DATABASE_HOST: ${{ vars.DATABASE_HOST }}
       DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+      DATABASE_HOST: ${{ vars.DATABASE_HOST }}
       POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
       POSTGRES_DB: ${{ secrets.DATABASE_NAME }}
     build:

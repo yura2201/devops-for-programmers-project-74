@@ -12,12 +12,12 @@ module.exports = {
     password: process.env.DATABASE_PASSWORD,
     port: process.env.DATABASE_PORT,
     host: process.env.DATABASE_HOST,
-    dialectOptions: {
-      ssl: {
-        require: false,
-        rejectUnauthorized: false,
-      },
-    },
+//    dialectOptions: {
+//      ssl: {
+//        require: false,
+//        rejectUnauthorized: false,
+//      },
+//    },
   },
   test: {
     dialect: 'postgres',

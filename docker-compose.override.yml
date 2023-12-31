@@ -1,6 +1,20 @@
 version: '3'
 
 services:
+  caddy:
+    image: caddy:2.7.6-alpine
+    volumes:
+      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "caddy_data:/data"
+      - "caddy_config:/config"
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - db
+    networks:
+      - hexlet-net
+
   app:
     env_file:
       - .env
@@ -13,20 +27,6 @@ services:
       - "./app:/app"
     depends_on:
       - caddy
-    networks:
-      - hexlet-net
-
-  caddy:
-    image: caddy:2.7.6-alpine
-    volumes:
-      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
-      - "caddy_data:/data"
-      - "caddy_config:/config"
-    ports:
-      - 80:80
-      - 443:443
-    depends_on:
-      - db
     networks:
       - hexlet-net
 

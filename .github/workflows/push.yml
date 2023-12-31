@@ -38,7 +38,12 @@ jobs:
 
       - name: Test
         run: |
-          make ci
+          touch .env
+          echo DATABASE_HOST=${{ vars.DATABASE_HOST }} >> .env
+          echo DATABASE_NAME=${{ secrets.DATABASE_NAME }} >> .env
+          echo DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> .env
+          echo DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> .env
+          make compose-ci
 
       - name: Build and push
         uses: docker/build-push-action@v5

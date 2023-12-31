@@ -26,10 +26,10 @@ jobs:
       - name: Extract envs
         run: |
           touch .env
-          echo DATABASE_HOST=${{ vars.DATABASE_HOST }} >> .env
-          echo DATABASE_NAME=${{ secrets.DATABASE_NAME }} >> .env
-          echo DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> .env
-          echo DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> .env
+          echo DATABASE_HOST=$DATABASE_HOST >> .env
+          echo DATABASE_NAME=$DATABASE_NAME >> .env
+          echo DATABASE_USERNAME=$DATABASE_USERNAME >> .env
+          echo DATABASE_PASSWORD=$DATABASE_PASSWORD >> .env
 
       - name: Hexlet project check
         uses: hexlet/project-action@release

@@ -15,21 +15,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      DATABASE_HOST: ${{ vars.DATABASE_HOST }}
-      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-      DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
     steps:
       - uses: actions/checkout@v3
-
-      - name: Extract envs
-        run: |
-          touch .env
-          echo DATABASE_HOST=$DATABASE_HOST >> .env
-          echo DATABASE_NAME=$DATABASE_NAME >> .env
-          echo DATABASE_USERNAME=$DATABASE_USERNAME >> .env
-          echo DATABASE_PASSWORD=$DATABASE_PASSWORD >> .env
 
       - name: Hexlet project check
         uses: hexlet/project-action@release

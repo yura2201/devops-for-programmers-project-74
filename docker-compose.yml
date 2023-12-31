@@ -3,8 +3,6 @@ version: "3"
 services:
   app:
     image: yura2201/devops-for-programmers-project-74
-    env_file:
-      - .env
     build:
       context: .
       dockerfile: Dockerfile.production

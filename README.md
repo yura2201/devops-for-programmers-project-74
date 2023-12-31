@@ -6,6 +6,8 @@
 5. Configure database:
     - The project is already configured to interact with a Postgres Database by declaring an appropriate service in a [docker-compose.yml](./docker-compose.yml).
     - To run with a different db requisites, follow the [Docker reference](https://hub.docker.com/_/postgres)
+6. Configure web server Caddy, if needed. 
+   [Caddy image](https://hub.docker.com/_/caddy?tab=description) is used to implement proxy. ~~~~
 
 ### Docker image
 This project is intended to show some features of a Docker, docker-compose and its integration abilities. 

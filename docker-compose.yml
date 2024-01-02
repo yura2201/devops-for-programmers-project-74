@@ -21,7 +21,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
     command: npm test
     networks:
       - hexlet-net

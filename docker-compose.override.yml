@@ -16,8 +16,9 @@ services:
       - hexlet-net
 
   app:
-    env_file:
-      - .env
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
     build:
       dockerfile: Dockerfile
     command: bash -c 'sleep 3 && npm start'

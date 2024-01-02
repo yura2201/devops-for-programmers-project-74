@@ -11,7 +11,7 @@ services:
       - 80:80
       - 443:443
     depends_on:
-      - db
+      - app
     networks:
       - hexlet-net
 
@@ -20,15 +20,16 @@ services:
       - .env
     build:
       dockerfile: Dockerfile
-    command: npm start
+    command: bash -c 'sleep 3 && npm start'
     ports:
       - "8080:8080"
     volumes:
       - "./app:/app"
-    depends_on:
-      - caddy
+#    depends_on:
+#      - caddy
     networks:
       - hexlet-net
+    restart: on-failure:5
 
 volumes:
   caddy_data:

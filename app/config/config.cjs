@@ -14,7 +14,7 @@ module.exports = {
     host: process.env.DATABASE_HOST,
 //    dialectOptions: {
 //      ssl: {
-//        require: false,
+//        require: true,
 //        rejectUnauthorized: false,
 //      },
 //    },
